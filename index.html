@@ -1,0 +1,153 @@
+<html>
+<script type="text/javascript">
+	
+	//Hellow message through alert (it is linked with the button check the <button> tag)
+	function helloMandarin(){
+		alert("Hello Mandarin!")
+	}
+
+	//--------------Data types----------------
+	//Strings either with double quotes or single - Primitive data type
+	var name = "Khachik" 
+	//-------or-----
+	//var name = 'Khachik'
+	
+	//Numbers - Primitive data type
+	var age = 18; //integer
+	var weight = 56.5 //float
+
+	//Boolean - Primitive data type
+	var heIsMale = true;
+
+	//Arrays - Referenced data type
+	var skills = ["JavaScript", "HTML", "CSS"];
+	//-------or-----
+	//var skills = []; 
+	//skills[0] = "JavaScript";
+	//skills[1] = "HTML";
+	//skills[2] = "CSS";
+
+	//Accessing array length
+	var numberOfSkills = skills.length; // 3
+
+	//Objects - Referenced data type
+	var person1 = {
+		age: 18,
+		name: "Khachik"
+	}
+	//or
+	var person2 = {
+		age: age,
+		name: name
+	}
+	//or
+	var person3 = new Object({
+		name: "Khachik",
+		age: 18
+	});
+	//or 
+	var person4 = {};
+	person4["name"] = "Khachik";
+	person4.age = 18;
+
+	//Accessing properties
+	person3.age = age;
+	person2.name = name;
+	person1.age = person2.name;
+	person3.age = 18;
+
+	//Functions - Referenced data type
+	//There are two ways for defining functions
+	
+	//1st version
+	function getAge(person){
+		return person.age;
+	}
+	//2nd version
+	var getAge = function(person){
+		return person.age;
+	}
+
+	var Khachik = {
+		name: "Khachik",
+		age: 18,
+		weight: weight
+	}
+	console.log(getAge(Khachik)) //prints 18
+	//********Important
+	//You can call the 1st version function before it's definition but the 2nd not
+
+	//Seting functions in object properties
+	var Donald = {
+		name: "Donald",
+		age: 70,
+		getAge: function(){
+			return this.age;
+		},
+		votes: -100,
+		giveVote: function(vote){
+			this.votes = this.votes + vote;
+			//or
+			//this.votes += vote;
+		},
+		getVotes: function(){
+			return this.votes
+		},
+		hanrapetakan: function(){
+			this.votes = 1000000;
+		}
+	}
+	console.log(Donald.getAge()) //prints 70
+	console.log(Donald.getVotes()) //prints -100
+	
+	Donald.giveVote(1);
+	console.log(Donald.getVotes()) //prints -99
+	Donald.hanrapetakan();
+	console.log(Donald.getVotes()) //prints 1000000
+
+	var printDonaldsVotes = function(donald){
+		console.log(donald.getVotes());
+	}
+
+	var boostDonaldVotes = function(donald){
+		donald.votes = 2000000;
+	}
+
+	printDonaldsVotes(Donald) // prints 1000000
+	boostDonaldVotes(Donald)
+	printDonaldsVotes(Donald) // prints 2000000
+
+	//Let's play more with functions 
+	//Forget about Trump
+
+	var circle = {
+		radius: 2,
+		color: "red",
+	}
+
+	var square = {
+		side: 2,
+		color: "orange",
+	}
+	
+	var getCircleArea = function(circle){
+		return circle.radius * circle.radius * Math.PI;
+	}
+
+	var getSquareArea = function(square){
+		return square.side * square.side;
+	}	
+
+	
+	function printArea(figure, areaFunction){
+		console.log(areaFunction(figure));
+	}
+
+	printArea(circle, getCircleArea); // prints 12.566...
+	printArea(square, getSquareArea); // prints 4
+
+</script>
+<button onclick="helloMandarin()">
+	Hello 
+</button>
+</html>
