@@ -1,5 +1,9 @@
 # Day 3
 
+Today we've learned DOM manipulation by writing pure JavaScript codes (check the domExample.html file), a little bit about jQuery, making AJAX requests with jQuery and Bootstrap, creating two node servers and making calls between them.
+
+## Mainly the project is the follwoing:
+
 We have two servers (server1.js and server2.js) and client parts in this example.
 
 From the first server we serve html file to client. The html file has two tables: drivers and cars. 
@@ -21,9 +25,9 @@ Server ports
 - Second server (server2.js) listens on 3002 port
 
 Clients side libs
-- Bootstrap - Used for styling tables
-- jQuery - Used for manipulating DOM and making AJAX requests to the server 
+- [Bootstrap](http://www.w3schools.com/bootstrap/) - Used for styling tables
+- [jQuery](http://www.w3schools.com/jquery/) - Used for manipulating DOM and making AJAX requests to the server 
 
 Server side libs or actually node modules
-- express - Used for creating servers and defining requests routes
-- request - Used for making request to the second server 
+- [express](http://expressjs.com/) - Used for creating servers and defining requests routes
+- [request](https://github.com/request/request) - Used for making request to the second server 
