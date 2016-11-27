@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Drivers and Cars Table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      
+      //makes ajax GET request to get drivers list from the server
+      $.get("/drivers", function(data, status){
+          console.log("Status----" + status);
+          console.log(data);
+          
+          //data is retrived from the server which has drivers array
+          var drivers = data.drivers;
+          printDrivers(drivers);
+      })
+      
+      //makes ajax GET request to get cars list from the server
+      $.get("/cars", function(data){
+          console.log("Status----" + status);
+          console.log(data);
+          
+          //data is retrived from the server which has cars array
+          var cars = data.cars;
+          printCars(cars);
+      })
+      
+      
+      
+      //creates string which contains html <td> tags
+      function getRow(td1, td2){
+        return "<td>" + td1 + "</td>" + 
+               "<td>" + td2 + "</td>"; 
+      }
+      
+      //prints drivers table
+      function printDrivers(drivers){
+          for(var i = 0; i < drivers.length; i++){
+              var driverRow = getRow(drivers[i].name, drivers[i].car) //gets the row string
+              
+              //add the row to drivers table (does DOM manipulation)
+              $("#drivers").append("<tr>" + driverRow + "</tr>");  
+          }
+      }
+      
+      //prints cars table
+      function printCars(cars){
+        for(var i = 0; i < cars.length; i++){
+            var carRow = getRow(cars[i].model, cars[i].price) //gets the row string
+  
+            //add the row to drivers table (does DOM manipulation)
+            $("#cars").append("<tr>" + carRow + "</tr>");
+        }
+      }
+      
+    })
+  </script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Drivers Table</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Car</th>
+        </tr>
+      </thead>
+      <tbody id="drivers">
+
+      </tbody>
+    </table>
+
+    <h2>Cars Table</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody id="cars">
+
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>
