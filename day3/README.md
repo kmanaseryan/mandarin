@@ -9,10 +9,10 @@ server.
 ##Geting started
 - Download the [node](https://nodejs.org/en/) and install it in your computer
 - Install [git](https://git-scm.com/downloads) if you are in Windows
-- After succesfull installation clone this repo by runing in git bash the following command
-`git@github.com:kmanaseryan/mandarin.git`
-- Redirect to day3 folder by typeing the following command `cd /mandarin/day3`
-- Type in your console `npm install` to download required dependeces (after this operation you will have node_modules folder)
+- After succesfull installation clone this repo by typing in git bash the following command
+`git clone git@github.com:kmanaseryan/mandarin.git`
+- Redirect to day3 folder by typeing `cd /mandarin/day3`
+- Type in your console `npm install` to download required dependences (after this operation you will have node_modules folder)
 - Run the second server `node server2.js` then in another console but in the same directory run first server `node server1.js` and go to your browser and type `localhost:3000`
 
 
