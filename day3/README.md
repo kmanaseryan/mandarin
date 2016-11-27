@@ -10,7 +10,7 @@ From the first server we serve html file to client. The html file has two tables
 The data of the tables are being retrived from the first server, whereas the first server gets the data of cars from the second
 server.
 
-##Geting started
+##Getting started
 - Download the [node](https://nodejs.org/en/) and install it in your computer
 - Install [git](https://git-scm.com/downloads) if you are in Windows
 - After succesfull installation clone this repo by typing in git bash the following command
